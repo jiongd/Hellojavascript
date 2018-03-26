@@ -5,3 +5,8 @@ let then="Then: open the door"
 
 let arrayStory=[given,when1,when2,then];
 console.log(arrayStory);
+console.log("control-flow:for")
+for(let index=0;index<arrayStory.length;index++){
+    const strStory=arrayStory[index];
+    console.log(strStory);
+}
