@@ -18,8 +18,8 @@ export default class story{
     console.log(this.content); 
     for(let index = 0;index<this.content.length;index++){
        const strContent=this.content[index];
-       const key=this.content.substr(0,strContent.indexOf(":"));
-       const message=this.content.substr(strContent.indexOf(":")+1);
+       const key=strContent.substr(0,strContent.indexOf(":"));
+       const message=strContent.substr(strContent.indexOf(":")+1);
        switch(key){
            case "Given":
               this.Given(message);
