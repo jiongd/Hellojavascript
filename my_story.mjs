@@ -5,8 +5,8 @@ export default class MyStory extends Story{
    } 
    When(context){
        super.When(context);
-       if(context===" ask Open the door") this.event("question","who are you");
-       if(context===" say I am Mom") this.event("question","Mom is back!")
+       if(context===" ask Open the door") super.event("question","who are you");
+       if(context===" say I am Mom") super.event("question","Mom is back!")
    }
    Then(context){
        super.Then(context);
