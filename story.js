@@ -9,8 +9,23 @@ console.log("control-flow:for")
 for(let index=0;index<arrayStory.length;index++){
     const strStory=arrayStory[index];
     const key=strStory.substr(0,strStory.indexOf(":"));
-     if(key==="Given"){console.log(`It's a Given: ${strStory.substr(strStory.indexOf(":")+1)}`);}
-     else if(key==="When"){console.log(`It's a When: ${strStory.substr(
-         strStory.indexOf(":")+1)}`);}
-     else{console.log(`It's a ${key}: ${strStory.substr(strStory.indexOf(":")+1)}`);}
+    switch(key){
+     case  "Given":{
+        console.log(`It's a Given: ${strStory.substr(strStory.indexOf(":")+1)}`);
+        break;
+     }
+     case "When":{
+        console.log(`It's a When: ${strStory.substr(strStory.indexOf(":")+1)}`);
+        break;
+     }
+     case "Then":
+     default:
+     {
+        console.log(`It's a ${key}: ${strStory.substr(strStory.indexOf(":")+1)}`);
+        break;
+     }
+   }
 }
+
+
+    
