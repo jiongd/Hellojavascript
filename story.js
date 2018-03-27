@@ -5,27 +5,39 @@ let then="Then: open the door"
 
 let arrayStory=[given,when1,when2,then];
 console.log(arrayStory);
-console.log("control-flow:for")
+console.log("control-flow:for and switch")
 for(let index=0;index<arrayStory.length;index++){
     const strStory=arrayStory[index];
     const key=strStory.substr(0,strStory.indexOf(":"));
+    const message=strStory.substr(strStory.indexOf(":")+1);
     switch(key){
      case  "Given":{
-        console.log(`It's a Given: ${strStory.substr(strStory.indexOf(":")+1)}`);
+        Given(message);
         break;
      }
      case "When":{
-        console.log(`It's a When: ${strStory.substr(strStory.indexOf(":")+1)}`);
+        When(message);;
         break;
      }
      case "Then":
      default:
      {
-        console.log(`It's a ${key}: ${strStory.substr(strStory.indexOf(":")+1)}`);
+        Then(message);
         break;
      }
    }
 }
 
-
+function Given(message){
+  event("Given",message);
+}
+function When(message){
+    event("When",message);  
+}
+function Then(message){
+    event("Then",message);
+}
+function event(even,message){
+    console.log(`It's a ${even}: ${message}`);
+}
     
