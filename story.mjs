@@ -30,7 +30,7 @@ export default class story{
            case "Then":
                this.Then(message);
             default:
-               this.event(key,message);
+             //  this.event(key,message);
                break;
         
                
