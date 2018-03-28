@@ -1,0 +1,20 @@
+{
+  "name": "hellojs",
+  "version": "1.0.0",
+  "description": "js",
+  "main": "open_door.mjs",
+  "scripts": {
+    "test": "--experimental-modules open_door.mjs"
+  },
+  "keywords": [
+    "js",
+    "node",
+    "qa"
+  ],
+  "author": "jdz",
+  "license": "ISC",
+  "dependencies": {
+    "npm": "^5.8.0",
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  }
+}
