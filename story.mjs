@@ -28,8 +28,9 @@ export default class story{
                this.When(message);
                break;
            case "Then":
+               this.Then(message);
             default:
-               this.Then(message)
+               this.event(key,message);
                break;
         
                
