@@ -11,20 +11,20 @@ export default class LoginStory extends story {
    }
   When(context){
       super.When(context);
-      if(context===" enter user name [admin]") {
+      if(context===" enter user name [admin]"){
          this.username=context.substring(context.indexOf("[")+1,context.indexOf("]"));
-         console.log(this.username);
+         console.log(`The username is ${this.username}`);
     }
-      if(context===" enter password [taylor2018]") {
+      if(context===" enter password [taylor2018]"){
           this.password=context.substring(context.indexOf("[")+1,context.indexOf("]"));
-          console.log(this.password);
+          console.log(`The password is ${this.password}`);
       }
   }
  Then(context){
      super.Then(context);
-     if(context===" [Successful!]"){
+     if(context===" [successful!]"){
      this.expected=context.substring(context.indexOf("[")+1,context.indexOf("]"));
-     console.log(this.expected);
+     console.log(`expected result is ${this.expected}`);
      }
      let driver=new webdriver.Builder().forBrowser("chrome").build();
      const loginurl="https://everdoc.github.io/hellojs/quize/login.html";
