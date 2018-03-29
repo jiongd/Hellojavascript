@@ -31,17 +31,19 @@ export default class LoginStory extends story {
      driver.get(loginurl);
      driver.wait(webdriver.until.urlIs(loginurl),2000*10)
      .then((success)=>{
-         driver.findElement(webdriver.By.id("name")).sendKeys(this.username);
-         driver.findElement(webdriver.By.id("password")).sendKeys(this.password);
-          driver.findElement(webdriver.By.className("ui button")).click()
+         driver.findElement(webdriver.By.id("name")).sendKeys(this.username).then(()=>{
+         driver.findElement(webdriver.By.id("password")).sendKeys(this.password);}).then(()=>{
+          driver.findElement(webdriver.By.className("ui button")).click();})
            .then((success)=>{
              driver.findElement(webdriver.By.id("result")).getText().then((message)=>{
                 this.actual=message;
                 console.log(`The actual is ${this.actual}`);
                 if(this.actual===this.expected){
                  console.log("The case is PASS");
+                 driver.quit();
                 }else{
                 console.log("The case is FAIL");
+                driver.quit();
                  }
               })
            })
