@@ -33,19 +33,26 @@ export default class LoginStory extends story {
      .then((success)=>{
          driver.findElement(webdriver.By.id("name")).sendKeys(this.username);
          driver.findElement(webdriver.By.id("password")).sendKeys(this.password);
-          driver.findElement(webdriver.By.className("ui button")).click()
-           .then((success)=>{
-             driver.findElement(webdriver.By.id("result")).getText().then((message)=>{
-                this.actual=message;
-                console.log(`The actual is ${this.actual}`);
-                if(this.actual===this.expected){
-                 console.log("The case is PASS");
-                }else{
-                console.log("The case is FAIL");
-                 }
-              })
-           })
-          }
+            }
        );
+     driver.findElement(webdriver.By.tagName("button")).click();
+     this.actual=driver.findElement(webdriver.By.id("result")).getText();
+     console.log("Actual result is:"+this.actual);
+     /*.then(()=>{
+          driver.findElement(webdriver.By.id("result")).getText().then((message)=>{
+               this.actual=message;
+               console.log(this.actual);
+            }
+
+          );
+        }, (reason)=>{
+           console.log(reason);
+        });*/
+     if(this.actual===this.expected){
+         console.log("The case is PASS");
+     }else{
+         console.log("The case is FAIL");
+     }
+
     }
  }
