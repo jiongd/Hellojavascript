@@ -12,7 +12,7 @@ export default class story{
       this.event("Then",message);
   }
     event(even,message){
-      console.log(`It's a ${even}: ${message}`);
+      console.log(`It's a ${even}:${message}`);
   }
   play(){ 
     console.log(this.content); 
