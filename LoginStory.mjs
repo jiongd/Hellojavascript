@@ -11,11 +11,11 @@ export default class LoginStory extends story {
    }
   When(context){
       super.When(context);
-      if(/ enter user name [admin]/.test(context)){
+      if(context===" enter user name [admin]"){
          this.username=context.substring(context.indexOf("[")+1,context.indexOf("]"));
          console.log(`The username is ${this.username}`);
        }
-      if(/ enter password [taylor2018]/.test(context)){
+      if(context===" enter password [taylor2018]"){
           this.password=context.substring(context.indexOf("[")+1,context.indexOf("]"));
           console.log(`The password is ${this.password}`);
       }
@@ -38,7 +38,8 @@ export default class LoginStory extends story {
              driver.findElement(webdriver.By.id("result")).getText().then((message)=>{
                 this.actual=message;
                 console.log(`The actual is ${this.actual}`);
-                if(this.actual===this.expected){
+             
+               if(this.actual.toLowerCase(this.expected)){
                  console.log("The case is PASS");
                  driver.quit();
                 }else{
