@@ -11,18 +11,18 @@ export default class LoginStory extends story {
    }
   When(context){
       super.When(context);
-      if(context===" enter user name [admin]"){
+      if(/ enter user name [admin]/.test(context)){
          this.username=context.substring(context.indexOf("[")+1,context.indexOf("]"));
          console.log(`The username is ${this.username}`);
-    }
-      if(context===" enter password [taylor2018]"){
+       }
+      if(/ enter password [taylor2018]/.test(context)){
           this.password=context.substring(context.indexOf("[")+1,context.indexOf("]"));
           console.log(`The password is ${this.password}`);
       }
   }
  Then(context){
      super.Then(context);
-     if(context===" [successful!]"){
+     if(/[successful!]/.test(context)){
      this.expected=context.substring(context.indexOf("[")+1,context.indexOf("]"));
      console.log(`expected result is ${this.expected}`);
      }
