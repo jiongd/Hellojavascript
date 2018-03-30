@@ -43,7 +43,6 @@ export default class LoginStory extends story {
                if(this.actual.toLowerCase()===this.expected.toLowerCase()){
                  console.log("The case is PASS");
                  driver.quit();
-                 console.log("测试github更新");
                 }else{
                 console.log("The case is FAIL");
                 driver.quit();
