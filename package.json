@@ -2,9 +2,9 @@
   "name": "hellojs",
   "version": "1.0.0",
   "description": "js",
-  "main": "open_door.mjs",
+  "main": "open_login.mjs",
   "scripts": {
-    "test": "--experimental-modules open_door.mjs"
+    "test": "--experimental-modules open_login.mjs"
   },
   "keywords": [
     "js",
